@@ -1,0 +1,2 @@
+到build目录运行 cmake ..
+再运行make

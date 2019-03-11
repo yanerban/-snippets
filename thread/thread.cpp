@@ -121,7 +121,8 @@ void Thread::Start()
   }
   {
     std::unique_lock<std::mutex> lock(mutex_);
-    cond_.wait(lock);
+    while(tid_ == 0)
+      cond_.wait(lock);
   }
 }
 
